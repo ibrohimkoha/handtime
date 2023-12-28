@@ -341,18 +341,19 @@
         </h2>
       </div>
       <div class="product_container">
+        {% for topsales in topsale%}
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w1.png' %}" alt="">
+              <img src="{{ topsales.image.url }}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
                 <h6>
-                  Men's Watch
+                 {{topsales.name}}
                 </h6>
                 <h5>
-                  <span>$</span> 300
+                  <span>$</span> {% if topsales.aksiya_price%}{{topsales.aksiya_price}} <s>${{topsales.price}}</s> {% else %}{{topsales.price}}{% endif %}
                 </h5>
               </div>
               <div class="like">
@@ -375,74 +376,7 @@
             </a>
           </div>
         </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w2.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w3.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -460,18 +394,19 @@
         </h2>
       </div>
       <div class="product_container">
+        {% for features in feature%}
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w4.png' %}" alt="">
+              <img src="{{features.image.url}}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
                 <h6>
-                  Men's Watch
+                  {{features.name}}
                 </h6>
                 <h5>
-                  <span>$</span> 300
+                  <span>$</span> {% if features.aksiya_price%}{{features.aksiya_price}} <s>${{topsales.price}}</s> {% else %}{{features.price}}{% endif %}
                 </h5>
               </div>
               <div class="like">
@@ -494,74 +429,7 @@
             </a>
           </div>
         </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w5.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w6.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -580,18 +448,19 @@
         </h2>
       </div>
       <div class="product_container">
+        {% for news in new%}
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w7.png' %}" alt="">
+              <img src="{{news.image.url}}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
                 <h6>
-                  Men's Watch
+                  {{news.name}}
                 </h6>
                 <h5>
-                  <span>$</span> 300
+                  <span>$</span> {% if news.aksiya_price%}{{news.aksiya_price}} <s>${{topsales.price}}</s> {% else %}{{news.price}}{% endif %}
                 </h5>
               </div>
               <div class="like">
@@ -614,74 +483,7 @@
             </a>
           </div>
         </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w8.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="{% static 'images/w9.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
