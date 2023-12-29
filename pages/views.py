@@ -27,7 +27,7 @@ def product(request):
         'feature': feature,
         'new': new
     }
-    return render(request, 'product.html')
+    return render(request, 'product.html', conext=context)
 
 def testimonial(request):
     return render(request, 'testimonial.html')
