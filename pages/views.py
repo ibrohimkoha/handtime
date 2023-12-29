@@ -18,6 +18,15 @@ def about(request):
     return render(request, 'about.html')
 
 def product(request):
+        topsale = WatchModel.objects.filter(category__name__icontains='top')
+    feature = WatchModel.objects.filter(category__name__icontains='feature')
+    new = WatchModel.objects.filter(category__name__icontains='new')
+
+    context = {
+        'topsale': topsale,
+        'feature': feature,
+        'new': new
+    }
     return render(request, 'product.html')
 
 def testimonial(request):
