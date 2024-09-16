@@ -6,11 +6,12 @@ def index(request):
     topsale = WatchModel.objects.filter(category__name__icontains='top')
     feature = WatchModel.objects.filter(category__name__icontains='feature')
     new = WatchModel.objects.filter(category__name__icontains='new')
-
+    clients = TestimonialModel.objects.all().order_by('-pk')[:3]
     context = {
+        'clients': clients
         'topsale': topsale,
         'feature': feature,
-        'new': new
+        'new': new,
     }
     return render(request, 'index.html', context=context)
 
@@ -30,7 +31,11 @@ def product(request):
     return render(request, 'product.html', conext=context)
 
 def testimonial(request):
-    return render(request, 'testimonial.html')
+    clients = TestimonialModel.objects.all().order_by('-pk')[:3]
+        context = {
+        'clients': clients
+        }
+    return render(request, 'testimonial.html', context=context)
 
 def contact(request):
     return render(request, 'contact.html')
